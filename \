@@ -4,32 +4,29 @@
   let coords = spring(
     { x: 0, y: 0 },
     {
-      stiffness: 0.25,
-      damping: 0.7,
+      stiffness: 0.1,
+      damping: 0.25,
     },
   );
 </script>
 
-<div
-  on:mousemove={(e) => {
-    coords.set({ x: e.clientX, y: e.clientY });
-  }}
->
-  <p style="left: {$coords.x}px; top: {$coords.y}px">Hello World!</p>
+<div on:mousemove={(e) => {
+  coords.set({x: e.clientX; y: e.clientY})
+}}>
+  <p style="top: {$coords.x}; left: {$coords.y}">Hello World!</p>
 </div>
 
 <style>
   div {
     width: 100vw;
     height: 100vh;
-    position: relative;
+    display: aboslute;
   }
 
   p {
     border: 1px solid black;
+    display: inline;
     padding: 10px;
     border-radius: 10px;
-    position: absolute;
-    transform: translate(-50%, -100%);
   }
 </style>
